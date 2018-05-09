@@ -46,6 +46,8 @@ probabilities = tf.nn.softmax(logits)
 y = tf.placeholder(tf.int32, (None))
 one_hot_y = tf.one_hot(y, 43)
 
+keep_prob = tf.placeholder(tf.float32)
+
 rate = 0.0005
 
 cross_entropy = tf.nn.softmax_cross_entropy_with_logits(labels=one_hot_y, logits=logits)
