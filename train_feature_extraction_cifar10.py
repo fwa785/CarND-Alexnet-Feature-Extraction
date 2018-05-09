@@ -42,7 +42,7 @@ probabilities = tf.nn.softmax(logits)
 # HINT: Look back at your traffic signs project solution, you may
 # be able to reuse some the code.
 y = tf.placeholder(tf.int32, (None))
-one_hot_y = tf.one_hot(y, 43)
+one_hot_y = tf.one_hot(y, nb_classes)
 
 keep_prob = tf.placeholder(tf.float32)
 
