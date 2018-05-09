@@ -75,8 +75,6 @@ BATCH_SIZE = 64
 
 training_accuracy = []
 validation_accuracy = []
-training_loss = []
-validation_loss = []
 
 t = time.time()
   
@@ -95,14 +93,10 @@ with tf.Session() as sess:
         
         training_accuracy.append(evaluate(X_train, y_train))
         validation_accuracy.append(evaluate(X_valid, y_valid))
-        training_loss.append(evaluate_loss(X_train, y_train))  
-        validation_loss.append(evaluate_loss(X_valid, y_valid))  
-        
+
         print("EPOCH {} ...".format(i+1))
         print("Training Accuracy = {:.3f}".format(training_accuracy[i]))
         print("Validation Accuracy = {:.3f}".format(validation_accuracy[i]))
-        print("Training loss = {:.3f}".format(training_loss[i]))        
-        print("Validation loss = {:.3f}".format(validation_loss[i]))        
         print()
                        
 print("Time: %.3f seconds" % (time.time() - t))
